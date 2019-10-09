@@ -61,3 +61,5 @@ db.sequelize.sync(syncOptions).then(() => {
 });
 
 module.exports = app;
+
+
