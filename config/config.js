@@ -1,5 +1,6 @@
 module.exports = {
   development: {
+    'use_env_variable': 'JAWSDB_URL',
     username: process.env.SEQUELIZE_USER,
     password: process.env.SEQUELIZE_PASSWORD,
     database: 'moods_db',
