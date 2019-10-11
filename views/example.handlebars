@@ -1,36 +1,43 @@
 {{> nav/nav-block}}
 
 <div id="home">
-  <div class="container">
+<div class="container">
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+        <h3>How are you doing today?</h3>
+        <p>Drag the slider to express your mood.</p>
+        <p>
+        <label for="number">Excited: </label>
+        <input type="text" id="q1">
+        </p>
+        <div class="mb-3" id="mySlider1"></div>
+
+        <p>
+        <label for="number">Tired: </label>
+        <input type="text" id="q2">
+        </p>
+        <div id="mySlider2" class="mb-3"></div>
+        <p>
+        <label for="number">Happy: </label>
+        <input type="text" id="q3">
+        </p>
+        <div id="mySlider3" class="mb-3"></div>
+
+        <p>
+        <label for="number">Upset: </label>
+        <input type="text" id="q4">
+        </p>
+        <div id="mySlider4" class="mb-3"></div>
+        
+        
       </div>
     </div>
   </div>
 </div>
 
 <script src="/assets/js/example.js"></script>
+
 
 {{> modal/login-block}}
 
