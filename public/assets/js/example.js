@@ -42,4 +42,4 @@ $(document).ready(function () {
     }
   });
   $('#q4').val($('#mySlider4').slider('value'));
-}); 
+});
