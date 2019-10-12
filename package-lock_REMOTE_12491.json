@@ -1,5 +1,9 @@
 {
+
+
+
   "name": "project2-team4",
+
   "version": "1.0.0",
   "lockfileVersion": 1,
   "requires": true,
@@ -238,13 +242,14 @@
         }
       }
     },
+
     "bowser": {
       "version": "2.7.0",
       "resolved": "https://registry.npmjs.org/bowser/-/bowser-2.7.0.tgz",
       "integrity": "sha512-aIlMvstvu8x+34KEiOHD3AsBgdrzg6sxALYiukOWhFvGMbQI6TRP/iY0LMhUrHs56aD6P1G0Z7h45PUJaa5m9w=="
     },
     "brace-expansion": {
-     "version": "1.1.11",
+      "version": "1.1.11",
       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
       "integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",
       "requires": {

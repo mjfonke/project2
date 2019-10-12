@@ -72,3 +72,7 @@ hr {
 .card-body {
   color: #444;
 }
+
+#q1Slider .slider-selection {
+	background: #BABABA;
+}
