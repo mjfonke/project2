@@ -2,7 +2,7 @@ body {
   color: rgb(231, 184, 231);
   background-size: cover;
   background-color: rgb(68, 13, 68);
-  height:100%
+  height: 100%;
 }
 
 .jumbotron {
@@ -14,8 +14,8 @@ body {
 }
 
 .btn {
-  color:white;
-  background:rgb(68, 13, 68);
+  color: white;
+  background-color: rgb(68, 13, 68);
   border: 1px solid white;
 }
 
@@ -28,7 +28,7 @@ body {
 #update-err-msg,
 #login-err-msg,
 #create-err-msg {
-  color: red !important;
+  color: white !important;
 }
 
 #go-home {
@@ -40,7 +40,7 @@ body {
   padding-bottom: 2%;
   margin-top: 10%;
   background-color: rgb(131, 81, 131);
-  height:100%;
+  height: 100%;
   border-radius: .25rem;
   margin-bottom: 2%;
   width: 600px;
@@ -49,6 +49,7 @@ body {
 [data-useremail="true"] {
   color: white !important;
 }
+
 [data-register="true"] {
   color: white !important;
 }
@@ -75,7 +76,7 @@ hr {
 }
 
 #q1Slider .slider-selection {
-	background: #BABABA;
+  background-color: rgb(231, 184, 231);
 }
 
 .navvy {
