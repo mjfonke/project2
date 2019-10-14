@@ -1,36 +1,32 @@
 {{> nav/nav-block}}
 
-<div id="home">
-<div class="container">
+<div id="home" class="neg">
+<div class="container pos">
     <div class="row">
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
         <h3>How are you doing today?</h3>
         <p>Drag the slider to express your mood.</p>
         <p>
-        <label for="number">Excited: </label>
-        <input type="text" id="q1">
+          <label for="number">Excited: </label>
+          <input type="text" id="q1">
         </p>
         <div class="mb-3" id="mySlider1"></div>
-
         <p>
-        <label for="number">Tired: </label>
-        <input type="text" id="q2">
+          <label for="number">Tired: </label>
+          <input type="text" id="q2">
         </p>
         <div id="mySlider2" class="mb-3"></div>
         <p>
-        <label for="number">Happy: </label>
-        <input type="text" id="q3">
+          <label for="number">Happy: </label>
+          <input type="text" id="q3">
         </p>
         <div id="mySlider3" class="mb-3"></div>
-
         <p>
-        <label for="number">Upset: </label>
-        <input type="text" id="q4">
+          <label for="number">Upset: </label>
+          <input type="text" id="q4">
         </p>
         <div id="mySlider4" class="mb-3"></div>
-        
-        
       </div>
     </div>
   </div>
@@ -38,6 +34,4 @@
 
 <script src="/assets/js/example.js"></script>
 
-
 {{> modal/login-block}}
-
