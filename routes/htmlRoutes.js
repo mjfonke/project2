@@ -43,18 +43,18 @@ module.exports = (db) => {
     }
   });
 
-    // Load charts page
-    router.get('/charts', (req, res) => {
-      if (req.isAuthenticated()) {
-        const user = {
-          user: req.session.passport.user,
-          isloggedin: req.isAuthenticated()
-        };
-        res.render('charts', user);
-      } else {
-        res.render('charts');
-      }
-    });
+  // Load charts page
+  router.get('/charts', (req, res) => {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('charts', user);
+    } else {
+      res.render('charts');
+    }
+  });
 
   // Load dashboard page
   router.get('/dashboard', (req, res) => {
