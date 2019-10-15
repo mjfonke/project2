@@ -42,26 +42,26 @@ $(document).ready(function () {
     }
   });
   $('#q4').val($('#mySlider4').slider('value'));
-});
 
-$('#submit-btn').on('click', function (event) {
-  event.preventDefault();
+  $('#submit-btn').on('click', function (event) {
+    event.preventDefault();
 
-  const newMood = {
-    excited: $('#q1').val(),
-    tired: $('#q2').val(),
-    happy: $('#q3').val(),
-    upset: $('#q4').val()
-  };
+    const newMood = {
+      excited: $('#q1').val(),
+      tired: $('#q2').val(),
+      happy: $('#q3').val(),
+      upset: $('#q4').val()
+    };
 
-  $.ajax('/api/moods', {
-    type: 'POST',
-    data: newMood
-  }).then(
-    function () {
-      console.log('New Mood is added');
-      location.reload(); 
-      console.log(newMood);
-    }
-  );
+    $.ajax('/api/moods', {
+      type: 'POST',
+      data: newMood
+    }).then(
+      function () {
+        console.log('New Mood is added');
+        location.reload();
+        console.log(newMood);
+      }
+    );
+  });
 });
