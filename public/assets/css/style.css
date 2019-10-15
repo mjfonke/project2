@@ -3,7 +3,7 @@ body, html {
 }
 
 body {
-  color: white;
+  color: rgb(231, 184, 231);
   background-size: cover;
   height:100%;
   background-image: url("../image/lighthouse.jpeg");
@@ -23,6 +23,12 @@ h1{
   width: 100%;
   font-family: 'Galada', cursive;
   font-size: 72px;
+  background-color: rgb(68, 13, 68);
+  height: 100%;
+}
+
+.jumbotron {
+  background-color: rgb(131, 81, 131);
 }
 
 .login {
@@ -37,8 +43,8 @@ h1{
 }
 
 .btn {
-  color:white;
-  background:#cadde1;
+  color: white;
+  background-color: rgb(68, 13, 68);
   border: 1px solid white;
 }
 
@@ -51,7 +57,7 @@ h1{
 #update-err-msg,
 #login-err-msg,
 #create-err-msg {
-  color: red !important;
+  color: white !important;
 }
 
 #go-home {
@@ -73,6 +79,8 @@ h1{
   padding-bottom: 2%;
   margin-top: 10%;
   height:100%;
+  background-color: rgb(131, 81, 131);
+  height: 100%;
   border-radius: .25rem;
   margin-bottom: 2%;
   width: 600px;
@@ -81,6 +89,7 @@ h1{
 [data-useremail="true"] {
   color: white !important;
 }
+
 [data-register="true"] {
   color: white !important;
 }
@@ -95,7 +104,7 @@ h1{
 }
 
 hr {
-  background-color: #fff !important;
+  background-color: rgb(131, 81, 131);
 }
 
 .list-group-item {
@@ -107,7 +116,16 @@ hr {
 }
 
 #q1Slider .slider-selection {
-	background: #BABABA;
+  background-color: rgb(231, 184, 231);
+}
+
+.navvy {
+  background-color: rgb(44, 4, 44);
+}
+
+.moodiful {
+  font-size: 40px;
+  color: rgb(131, 81, 131);
 }
 
 .moodi-logo {
@@ -119,4 +137,3 @@ hr {
 a {
   color: black;
 }
-
