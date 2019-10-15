@@ -59,7 +59,7 @@ $(document).ready(function () {
     }).then(
       function () {
         console.log('New Mood is added');
-        location.reload(); 
+        location.reload();
         console.log(newMood);
       }
     );
