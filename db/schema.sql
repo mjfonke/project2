@@ -4,10 +4,9 @@ use moods_db;
 
 create table moods (
   id int not null auto_increment,
-  excited int(10) null,
-  tired int(10) null,
-  happy int(10) null,
-  upset int(10) null,
+  alert  int(11) not null,
+  happy int(11) not null,
+  relaxed int(11) not null,
   primary key (id)
 );
 
