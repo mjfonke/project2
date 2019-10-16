@@ -78,6 +78,15 @@ a {
   color: black;
 }
 
+.navvy {
+  background-color: rgb(44, 4, 44);
+}
+
+.moodiful {
+  font-size: 40px;
+  color: rgb(131, 81, 131);
+}
+
 /* example.handlebars */
 
 #custom-handle1, #custom-handle2, #custom-handle3{
@@ -90,6 +99,29 @@ a {
   color: rgb(44, 4, 44)
 }
 
+.box {
+  padding: 30px;
+  margin-top: 200px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.mood-btn {
+  text-align: center;
+
+}
+
+.label-left {
+  float: left;
+}
+
+.label-right {
+  float: right;
+}
+
+#submit-btn {
+  justify-content: center;
+}
 /* register.handlebars */
 
 #go-home {
@@ -97,16 +129,12 @@ a {
   height: 65px;
  }
 
-/* .container {
-  padding-bottom: 2%;
-  margin-top: 10%;
-  height:100%;
-  background-color: rgb(131, 81, 131);
-  height: 100%;
-  border-radius: .25rem;
-  margin-bottom: 2%;
-  width: 600px;
-} */
+ .register-wrapper {
+  padding: 20px;
+  margin-top: 130px;
+  text-align: center;
+  background-color: #ffffff;
+ }
 
 /* profile.handlebars */
 
@@ -118,6 +146,13 @@ a {
 
 [data-useremail="true"] {
   color: white !important;
+}
+
+.profile-wrapper {
+  padding: 20px;
+  margin-top: 125px;
+  text-align: center;
+  background-color: #ffffff;
 }
 
 /* example-detail.handlebars */
@@ -146,13 +181,11 @@ a {
 }
 
 
-.navvy {
-  background-color: rgb(44, 4, 44);
+/* charts.handlebars */
+.chart-container {
+  padding: 20px;
+  margin-top: 80px;
+  text-align: center;
+  background-color: #ffffff;
 }
-
-.moodiful {
-  font-size: 40px;
-  color: rgb(131, 81, 131);
-}
-
 
