@@ -24,8 +24,13 @@ module.exports = function (db) {
       });
     },
     createMood: function (req, res) {
-      db.Mood.create(req.body).then(function (dbMood) {
-        res.json(dbMood);
+      db.Mood.sync().then(() => {
+        const newMoods = {
+          data: req.body
+        };
+        return db.Mood.create(newMoods).then(() => {
+          res.json();
+        });
       });
     },
     deleteMood: function (req, res) {

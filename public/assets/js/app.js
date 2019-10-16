@@ -1,4 +1,4 @@
-$('#add-user').on('click', function (event) {
+$('#add-user').on('click', function (event, db) {
   event.preventDefault();
 
   const newAccount = {

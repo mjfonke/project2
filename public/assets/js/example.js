@@ -50,8 +50,9 @@ $(document).ready(function (db) {
 
       console.log(newMood);
 
-      $.ajax('/api/examples', {
+      $.ajax({
         type: 'POST',
+        url: '/api/examples',
         data: newMood
       }).then(
         function (res) {
