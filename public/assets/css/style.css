@@ -80,8 +80,14 @@ a {
 
 /* example.handlebars */
 
-#q1Slider .slider-selection {
-  background-color: rgb(231, 184, 231);
+#custom-handle1, #custom-handle2, #custom-handle3{
+  width: 3em;
+  height: 1.6em;
+  top: 50%;
+  margin-top: -.8em;
+  text-align: center;
+  line-height: 1.6em;
+  color: rgb(44, 4, 44)
 }
 
 /* register.handlebars */
