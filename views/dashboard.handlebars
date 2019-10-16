@@ -6,11 +6,11 @@
     <hr class="my-4">
     <div>
       {{#if isloggedin}}
-        <div class="mb-3">You are logged in as {{user.firstName}}</div>
-        <a href="/logout"> <button type="btn" class="btn mt">Logout</button></a>
+        <div class="mb-3 message">You are logged in as {{user.firstName}}</div>
+        <a href="/logout"> <button id="log" type="btn" class="btn mt">Logout</button></a>
       {{else}}
-        <div class="mb-3"><p>Please Log in to enter your mood today.</p></div>
-        <button>Login</button>
+        <div class="mb-3 message"><p>Please Log in to enter your mood today.</p></div>
+        <a href="/login"><button id="log" class="btn">Login</button></a>
       {{/if}}
       <h5 id="login-err-msg"></h5>
     </div>
