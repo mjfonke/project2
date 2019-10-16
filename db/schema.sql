@@ -10,7 +10,4 @@ create table moods (
   primary key (id)
 );
 
-insert into moods (excited, tired, happy, upset)
-values (5, 7, 4, 2);
-
 select * from moods;
