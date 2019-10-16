@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function (db) {
   $(function () {
     const handle1 = $('#custom-handle1');
     $('#slider1').slider({
@@ -12,9 +12,7 @@ $(document).ready(function () {
         handle1.text(ui.value);
       }
     });
-  });
 
-  $(function () {
     const handle2 = $('#custom-handle2');
     $('#slider2').slider({
       min: 1,
@@ -27,9 +25,7 @@ $(document).ready(function () {
         handle2.text(ui.value);
       }
     });
-  });
 
-  $(function () {
     const handle3 = $('#custom-handle3');
     $('#slider3').slider({
       min: 1,
@@ -42,27 +38,29 @@ $(document).ready(function () {
         handle3.text(ui.value);
       }
     });
-  });
 
-  $('#submit-btn').on('click', function (event) {
-    event.preventDefault();
+    $('#submit-btn').on('click', function (event) {
+      event.preventDefault();
 
-    const newMood = {
-      excited: $('#q1').val(),
-      tired: $('#q2').val(),
-      happy: $('#q3').val(),
-      upset: $('#q4').val()
-    };
+      const newMood = {
+        alert: parseInt($(handle1).text()),
+        happy: parseInt($(handle2).text()),
+        relaxed: parseInt($(handle3).text())
+      };
 
-    $.ajax('/api/moods', {
-      type: 'POST',
-      data: newMood
-    }).then(
-      function () {
-        console.log('New Mood is added');
-        location.reload();
-        console.log(newMood);
-      }
-    );
+      console.log(newMood);
+
+      $.ajax({
+        type: 'POST',
+        url: '/api/examples',
+        data: newMood
+      }).then(
+        function (res) {
+          console.log(res);
+          console.log('New Mood is added');
+          location.reload();
+        }
+      );
+    });
   });
 });

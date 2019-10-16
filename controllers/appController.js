@@ -19,18 +19,23 @@ module.exports = function (db) {
       });
     },
     getMoods: function (req, res) {
-      db.Mood.findAll({}).then(function (db) {
-        res.json(db);
+      db.Mood.findAll({}).then(function (dbMoods) {
+        res.json(dbMoods);
       });
     },
     createMood: function (req, res) {
-      db.Mood.create(req.body).then(function (db) {
-        res.json(db);
+      db.Mood.sync().then(() => {
+        const newMoods = {
+          data: req.body
+        };
+        return db.Mood.create(newMoods).then(() => {
+          res.json();
+        });
       });
     },
     deleteMood: function (req, res) {
-      db.Mood.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
-        res.json(dbExample);
+      db.Mood.destroy({ where: { id: req.params.id } }).then(function (dbMood) {
+        res.json(dbMood);
       });
     }
   };
