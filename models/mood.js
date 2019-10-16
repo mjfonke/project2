@@ -1,8 +1,19 @@
 module.exports = function (sequelize, DataTypes) {
   const Mood = sequelize.define('Mood', {
-    alert: DataTypes.INTEGER,
-    happy: DataTypes.INTEGER,
-    relaxed: DataTypes.INTEGER
+    alert: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    happy: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    relaxed: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    }
+  }, {
+    timestamps: true
   });
 
   Mood.associate = function (models) {

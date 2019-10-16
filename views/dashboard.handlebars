@@ -1,7 +1,7 @@
 {{> nav/nav-block}}
 
 <div id="main-container" class="container">
-  <div class="text-center header-wrap pos" align="center">
+  <div class="text-center header-wrap" align="center">
     <h1 class="main-logo">Moodiful</h1>
     <hr class="my-4">
     <div>
@@ -9,8 +9,8 @@
         <div class="mb-3 message">You are logged in as {{user.firstName}}</div>
         <a href="/logout"> <button id="log" type="btn" class="btn mt">Logout</button></a>
       {{else}}
-        <div class="mb-3 message"><p>Please Log in to enter your mood today.</p></div>
-        <a href="/login"><button id="log" class="btn">Login</button></a>
+        <div class="mb-3 message">Please Log in to enter your mood today.</div>
+        <a href="#" id="login-modal"> <button id="log" type="btn" class="btn">Login</button></a>
       {{/if}}
       <h5 id="login-err-msg"></h5>
     </div>
