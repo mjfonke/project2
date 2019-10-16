@@ -72,14 +72,13 @@ module.exports = (db) => {
   // Load example index page
   router.get('/example', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Example.findAll({}).then(function (dbExamples) {
-        res.render('example', {
-          msg: 'Welcome!',
-          examples: dbExamples
-        });
-      });
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('example', user);
     } else {
-      res.redirect('/');
+      res.redirect('/example');
     }
   });
 
