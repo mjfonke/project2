@@ -17,6 +17,21 @@ module.exports = function (db) {
       db.Example.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
         res.json(dbExample);
       });
+    },
+    getMoods: function (req, res) {
+      db.Mood.findAll({}).then(function (db) {
+        res.json(db);
+      });
+    },
+    createMood: function (req, res) {
+      db.Mood.create(req.body).then(function (db) {
+        res.json(db);
+      });
+    },
+    deleteMood: function (req, res) {
+      db.Mood.destroy({ where: { id: req.params.id } }).then(function (dbExample) {
+        res.json(dbExample);
+      });
     }
   };
 };
