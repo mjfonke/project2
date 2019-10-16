@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
     relaxed: DataTypes.INTEGER
   });
 
-  Mood.associate = function(models) {
+  Mood.associate = function (models) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
     Mood.belongsTo(models.User, {
