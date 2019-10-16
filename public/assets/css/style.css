@@ -12,7 +12,9 @@ body {
   background-size: cover;
 }
 
-h1{
+/* dashboard.handlebars */
+
+.main-logo {
   color: #FFFFFF;
   left: 0;
   line-height: 200px;
@@ -27,6 +29,14 @@ h1{
   height: 100%;
 }
 
+#main-container {
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  margin: auto;
+  padding: 10px;
+}
+
 .jumbotron {
   background-color: rgb(131, 81, 131);
 }
@@ -38,20 +48,11 @@ h1{
   left: 0;
   text-align: center;
 }
-.modal {
-  color: black;
-}
 
 .btn {
   color: white;
   background-color: rgb(68, 13, 68);
   border: 1px solid white;
-}
-
-#user-form, .header-wrap, #create-form, .create-user-wrap {
-  padding: 20px;
-  border-radius: 15px;
-  margin: 20px 0;
 }
 
 #update-err-msg,
@@ -60,20 +61,40 @@ h1{
   color: white !important;
 }
 
-#go-home {
- width: auto;
- height: 65px;
+hr {
+  background-color: rgb(131, 81, 131);
 }
 
-#main-container {
- 
-  width: 100%;
-  height: 100%;
-  
-  z-index: 500;
-  margin: auto;
-  padding: 10px;
+/* modal-login-block.handlebars */
+
+.modal {
+  color: black;
 }
+
+/* nav-block.handlebars */
+
+a {
+  color: black;
+}
+
+.moodi-logo {
+  font-family: 'Galada', cursive;
+  font-size: 27px;
+  color: black;
+}
+
+/* example.handlebars */
+
+#q1Slider .slider-selection {
+  background-color: rgb(231, 184, 231);
+}
+
+/* register.handlebars */
+
+#go-home {
+  width: auto;
+  height: 65px;
+ }
 
 /* .container {
   padding-bottom: 2%;
@@ -86,9 +107,24 @@ h1{
   width: 600px;
 } */
 
+/* profile.handlebars */
+
+#user-form, .header-wrap, #create-form, .create-user-wrap {
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
 [data-useremail="true"] {
   color: white !important;
 }
+
+/* example-detail.handlebars */
+
+.card-body {
+  color: #444;
+}
+
 
 [data-register="true"] {
   color: white !important;
@@ -103,21 +139,11 @@ h1{
   text-transform: capitalize;
 }
 
-hr {
-  background-color: rgb(131, 81, 131);
-}
 
 .list-group-item {
   line-height: 2.5;
 }
 
-.card-body {
-  color: #444;
-}
-
-#q1Slider .slider-selection {
-  background-color: rgb(231, 184, 231);
-}
 
 .navvy {
   background-color: rgb(44, 4, 44);
@@ -128,12 +154,4 @@ hr {
   color: rgb(131, 81, 131);
 }
 
-.moodi-logo {
-  font-family: 'Galada', cursive;
-  font-size: 27px;
-  color: black;
-}
 
-a {
-  color: black;
-}
