@@ -28,7 +28,7 @@ $(document).ready(function () {
       }
     });
   });
-  
+
   $(function () {
     const handle3 = $('#custom-handle3');
     $('#slider3').slider({
