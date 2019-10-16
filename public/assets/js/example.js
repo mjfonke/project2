@@ -1,47 +1,48 @@
 $(document).ready(function () {
-  $('#mySlider1').slider({
-    range: 'max',
-    min: 1,
-    max: 100,
-    value: 0,
-    slide: function (event, ui) {
-      $('#q1').val(ui.value);
-    }
+  $(function () {
+    const handle1 = $('#custom-handle1');
+    $('#slider1').slider({
+      min: 1,
+      max: 10,
+      value: 5,
+      create: function () {
+        handle1.text($(this).slider('value'));
+      },
+      slide: function (event, ui) {
+        handle1.text(ui.value);
+      }
+    });
   });
-  $('#q1').val($('#mySlider1').slider('value'));
 
-  $('#mySlider2').slider({
-    range: 'max',
-    min: 1,
-    max: 100,
-    value: 0,
-    slide: function (event, ui) {
-      $('#q2').val(ui.value);
-    }
+  $(function () {
+    const handle2 = $('#custom-handle2');
+    $('#slider2').slider({
+      min: 1,
+      max: 10,
+      value: 5,
+      create: function () {
+        handle2.text($(this).slider('value'));
+      },
+      slide: function (event, ui) {
+        handle2.text(ui.value);
+      }
+    });
   });
-  $('#q2').val($('#mySlider2').slider('value'));
 
-  $('#mySlider3').slider({
-    range: 'max',
-    min: 1,
-    max: 100,
-    value: 0,
-    slide: function (event, ui) {
-      $('#q3').val(ui.value);
-    }
+  $(function () {
+    const handle3 = $('#custom-handle3');
+    $('#slider3').slider({
+      min: 1,
+      max: 10,
+      value: 5,
+      create: function () {
+        handle3.text($(this).slider('value'));
+      },
+      slide: function (event, ui) {
+        handle3.text(ui.value);
+      }
+    });
   });
-  $('#q3').val($('#mySlider3').slider('value'));
-
-  $('#mySlider4').slider({
-    range: 'max',
-    min: 1,
-    max: 100,
-    value: 0,
-    slide: function (event, ui) {
-      $('#q4').val(ui.value);
-    }
-  });
-  $('#q4').val($('#mySlider4').slider('value'));
 
   $('#submit-btn').on('click', function (event) {
     event.preventDefault();
