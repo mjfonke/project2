@@ -91,10 +91,10 @@ module.exports = (db) => {
         isloggedin: req.isAuthenticated()
       };
       res.render('mood', user);
-      console.log("user loaded")
+      console.log('user loaded');
     } else {
       res.redirect('/mood');
-      console.log("redirected")
+      console.log('redirected');
     }
   });
 
