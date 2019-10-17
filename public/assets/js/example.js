@@ -39,28 +39,23 @@ $(document).ready(function (db) {
       }
     });
 
-    $('#submit-btn').on('click', function (event) {
+    $('#submit-btn').on('click', function (event, db) {
       event.preventDefault();
-
+    
       const newMood = {
         alert: parseInt($(handle1).text()),
         happy: parseInt($(handle2).text()),
         relaxed: parseInt($(handle3).text())
       };
-
-      console.log(newMood);
-
+    
       $.ajax({
         type: 'POST',
         url: '/api/examples',
         data: newMood
-      }).then(
-        function (res) {
-          console.log(res);
-          console.log('New Mood is added');
-          location.reload();
-        }
-      );
+      }).then(() => {
+        console.log('New Mood is added');
+        window.location.href = '/mood-results';
+      });
     });
   });
 });

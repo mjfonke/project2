@@ -1,0 +1,42 @@
+{{> nav/nav-block}}
+
+<div class="container profile-wrapper">
+  <header align="center" class="header-wrap">
+    <h1>Mood History</h1>
+    <div class="userId">
+      <h3>Welcome, {{userInfo.firstName}}</h3>
+    </div>
+    <h3 id="update-err-msg"></h3>
+  </header>
+
+  <div class="form-row">
+    <div class="col-md-6">
+      <label for="inputFirst">...</label>
+    </div>
+    <div class="col-md-6">
+      <label for="inputLast">...</label>
+    </div>
+  </div>
+
+    {{!-- <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputPassword">Email</label>
+        <input type="text" class="form-control" id="inputEmail" value="{{userInfo.email}}">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword">Password</label>
+        <input type="password" class="form-control" id="inputPassword" value="{{userInfo.password}}">
+      </div>
+    </div> --}}
+
+    {{!-- <div>
+      <button type="submit" id="update-user" data-id="{{userInfo.id}}" class="btn btn-primary">Update</button>
+      {{#unless userInfo.isAdmin}}
+        <button type="submit" id="delete-user" class="btn btn-primary">Delete</button>
+      {{/unless}}
+      <button type="submit" id="view-user" data-id="{{userInfo.id}}" class="btn btn-primary">Refresh</button>
+    </div> --}}
+
+<script src="/assets/js/example.js"></script>
+
+{{> modal/login-block}}

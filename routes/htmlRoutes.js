@@ -95,6 +95,19 @@ module.exports = (db) => {
     }
   });
 
+  // Mood Results
+  router.get('/mood-results', function (req, res) {
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('mood-results', user);
+    } else {
+      res.render('mood-results');
+    }
+  });
+
   // Logout
   router.get('/logout', (req, res, next) => {
     req.logout();

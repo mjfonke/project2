@@ -24,13 +24,14 @@ module.exports = function (db) {
       });
     },
     createMood: function (req, res) {
-      db.Mood.sync().then(() => {
-        const newMoods = {
-          data: req.body
-        };
-        return db.Mood.create(newMoods).then((dbMood) => {
-          res.json(dbMood);
-        });
+      const mood = {
+        alert: req.body.alert,
+        happy: req.body.happy,
+        relaxed: req.body.relaxed
+      };
+
+      return db.Mood.create(mood).then(() => {
+        res.status(200).json({ message: 'Mood created.' });
       });
     },
     deleteMood: function (req, res) {
