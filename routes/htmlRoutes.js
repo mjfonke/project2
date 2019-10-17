@@ -72,13 +72,29 @@ module.exports = (db) => {
   // Load example index page
   router.get('/example', function (req, res) {
     if (req.isAuthenticated()) {
+      db.Example.findAll({}).then(function (dbExamples) {
+        res.render('example', {
+          msg: 'Welcome!',
+          examples: dbExamples
+        });
+      });
+    } else {
+      res.redirect('/');
+    }
+  });
+
+  // Load mood input page
+  router.get('/mood', function (req, res) {
+    if (req.isAuthenticated()) {
       const user = {
         user: req.session.passport.user,
         isloggedin: req.isAuthenticated()
       };
-      res.render('example', user);
+      res.render('mood', user);
+      console.log("user loaded")
     } else {
-      res.redirect('/example');
+      res.redirect('/mood');
+      console.log("redirected")
     }
   });
 
