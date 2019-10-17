@@ -4,6 +4,7 @@ body, html {
 
 body {
   min-height: 100%;
+  background-attachment: fixed;
   background-image: url("../image/lighthouse.jpeg");
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +13,7 @@ body {
 /* dashboard.handlebars */
 
 .main-logo {
-  color: #FFFFFF;
+  color: #ffffff80;
   left: 0;
   line-height: 200px;
   margin-top: -100px;
@@ -38,6 +39,11 @@ body {
   border: 1px solid white;
 }
 
+.btn:hover {
+  background-color:rgb(46, 5, 46);
+  border: 1px solid white;
+}
+
 .message {
   color: #ffffff;
   left: 0;
@@ -48,7 +54,6 @@ body {
   top: 48%;
   width: 100%;
 }
-
 
 #update-err-msg,
 #login-err-msg,
@@ -79,7 +84,15 @@ a {
 }
 
 .navvy {
-  background-color: rgb(44, 4, 44);
+  min-width: 100%;
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pf-misc9-kut7315-chim_1.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1000&s=33a5bc106fdaa31b6133067b2747e480");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.nav-link:hover {
+  color: grey;
 }
 
 .moodiful {
@@ -103,12 +116,11 @@ a {
   padding: 30px;
   margin-top: 200px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #ffffff80;
 }
 
 .mood-btn {
   text-align: center;
-
 }
 
 .label-left {
@@ -133,7 +145,7 @@ a {
   padding: 20px;
   margin-top: 130px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #ffffff80;
  }
 
 /* profile.handlebars */
@@ -152,7 +164,7 @@ a {
   padding: 20px;
   margin-top: 125px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #ffffff80;
 }
 
 /* example-detail.handlebars */
@@ -186,6 +198,6 @@ a {
   padding: 20px;
   margin-top: 80px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #ffffff80;
 }
 

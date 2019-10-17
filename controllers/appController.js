@@ -28,8 +28,8 @@ module.exports = function (db) {
         const newMoods = {
           data: req.body
         };
-        return db.Mood.create(newMoods).then(() => {
-          res.json();
+        return db.Mood.create(newMoods).then((dbMood) => {
+          res.json(dbMood);
         });
       });
     },
