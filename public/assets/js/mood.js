@@ -50,18 +50,18 @@ const API = {
       url: 'api/mood',
       data: JSON.stringify(mood)
     });
-  };
-}
+  }
+};
 
 const submitMood = function (event) {
-event.preventDefault();
-const newMood = {
-  alert: parseInt($(handle1).text()),
-  happy: parseInt($(handle2).text()),
-  relaxed: parseInt($(handle3).text())
-};
-console.log('test3 ' + newMood);
-API.saveMood(newMood).then(console.log("worked"));
+  event.preventDefault();
+  const newMood = {
+    alert: parseInt($(handle1).text()),
+    happy: parseInt($(handle2).text()),
+    relaxed: parseInt($(handle3).text())
+  };
+  console.log('test3 ' + newMood);
+  API.saveMood(newMood).then(console.log('worked'));
 };
 
 $submitBtn.on('click', submitMood);
