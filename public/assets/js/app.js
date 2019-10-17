@@ -105,6 +105,11 @@ $('#login-modal').on('click', function (event) {
   $('#user-info').modal('show');
 });
 
+$('#login-btn').on('click', function (event) {
+  event.preventDefault();
+  $('#user-info').modal('show');
+});
+
 $('#go-home').on('click', function (event) {
   event.preventDefault();
   window.location.href = '/';
