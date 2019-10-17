@@ -108,7 +108,7 @@ $('#login-modal').on('click', function (event) {
 $('#login-btn').on('click', function (event) {
   event.preventDefault();
   $('#user-info').modal('show');
-})
+});
 
 $('#go-home').on('click', function (event) {
   event.preventDefault();
