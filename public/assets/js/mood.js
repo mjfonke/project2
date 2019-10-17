@@ -55,13 +55,12 @@
 
   const submitMood = function (event) {
     event.preventDefault();
-    console.log("here2")
     const newMood = {
       alert: parseInt($(handle1).text()),
       happy: parseInt($(handle2).text()),
       relaxed: parseInt($(handle3).text())
     };
-
+    console.log('test3 ' + newMood);
     API.saveMood(newMood).then(console.log("worked"));
   };
 

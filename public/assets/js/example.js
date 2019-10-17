@@ -63,7 +63,7 @@ const refreshExamples = function () {
 // Save the new example to the db and refresh the list
 const handleFormSubmit = function (event) {
   event.preventDefault();
-
+  console.log('worked');
   const example = {
     text: $exampleText.val().trim(),
     description: $exampleDescription.val().trim()

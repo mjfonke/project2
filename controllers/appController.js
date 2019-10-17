@@ -25,11 +25,21 @@ module.exports = function (db) {
       });
     },
     createMood: function (req, res) {
-      console.log("something: " + JSON.stringify(req.body))
-      db.Mood.create(req.body).then(console.log("OK")).then(function (dbMood) {
-          res.json(dbMood);
-          console.log("something else: " + res.json(dbMood))
-        });
+      console.log('something: ' + JSON.stringify(req.body));
+      // console.log('user:', req.user);
+
+      const newRecord = {
+        alert: req.body.alert,
+        happy: req.body.happy,
+        relaxed: req.body.relaxed,
+        UserId: req.user.id
+      };
+
+      db.Mood.create(newRecord).then(function (dbMood) {
+        console.log('OK');
+        res.json(dbMood);
+        console.log("something else: " + res.json(dbMood));
+      });
     },
     // createMood: function (req, res) {
     //   db.Mood.sync().then(() => {
