@@ -10,7 +10,7 @@ module.exports = function (db) {
     createExample: function (req, res) {
       db.Example.create(req.body).then(function (dbExample) {
         res.json(dbExample);
-        console.log("example worked")
+        console.log('example worked');
       });
     },
     // Delete an example by id
@@ -38,7 +38,7 @@ module.exports = function (db) {
       db.Mood.create(newRecord).then(function (dbMood) {
         console.log('OK');
         res.json(dbMood);
-        console.log("something else: " + res.json(dbMood));
+        console.log('something else: ' + res.json(dbMood));
       });
     },
     // createMood: function (req, res) {
