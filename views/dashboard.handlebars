@@ -9,10 +9,10 @@
         <div class="mb-3 message">You are logged in as {{user.firstName}}</div>
         <a href="/logout"> <button id="log" type="btn" class="btn mt">Logout</button></a>
       {{else}}
-        <div class="mb-3 message">Please Log in to enter your mood today.</div>
+        <div class="mb-3 message">Please Login to enter your mood today.</div>
         <a href="#" id="login-btn"> <button id="log" type="btn" class="btn">Login</button></a>
       {{/if}}
-      <h5 id="login-err-msg"></h5>
+      <h5 class="text-danger" id="login-err-msg"></h5>
     </div>
   </div>
 </div>
