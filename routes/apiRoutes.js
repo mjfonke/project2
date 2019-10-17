@@ -19,9 +19,9 @@ module.exports = (passport, db) => {
   router.delete('/examples/:id', AppController.deleteExample);
 
   // Moods
-  router.get('/examples', AppController.getMoods);
-  router.post('/examples', AppController.createMood);
-  router.delete('/examples/:id', AppController.deleteMood);
+  router.get('/mood', AppController.getMoods);
+  router.post('/mood', AppController.createMood);
+  router.delete('/mood/:id', AppController.deleteMood);
 
   return router;
 };

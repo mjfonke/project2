@@ -1,61 +1,97 @@
-$(document).ready(function (db) {
-  $(function () {
-    const handle1 = $('#custom-handle1');
-    $('#slider1').slider({
-      min: 1,
-      max: 10,
-      value: 5,
-      create: function () {
-        handle1.text($(this).slider('value'));
+// Get references to page elements
+const $exampleText = $('#example-text');
+const $exampleDescription = $('#example-description');
+const $submitBtn = $('#submit');
+const $exampleList = $('#example-list');
+
+// The API object contains methods for each kind of request we'll make
+const API = {
+  saveExample: function (example) {
+    return $.ajax({
+      headers: {
+        'Content-Type': 'application/json'
       },
-      slide: function (event, ui) {
-        handle1.text(ui.value);
-      }
+      type: 'POST',
+      url: 'api/examples',
+      data: JSON.stringify(example)
+    });
+  },
+  getExamples: function () {
+    return $.ajax({
+      url: 'api/examples',
+      type: 'GET'
+    });
+  },
+  deleteExample: function (id) {
+    return $.ajax({
+      url: 'api/examples/' + id,
+      type: 'DELETE'
+    });
+  }
+};
+
+// refreshExamples gets new examples from the db and repopulates the list
+const refreshExamples = function () {
+  API.getExamples().then(function (data) {
+    const $examples = data.map(function (example) {
+      const $a = $('<a>')
+        .text(example.text)
+        .attr('href', '/example/' + example.id);
+
+      const $li = $('<li>')
+        .attr({
+          class: 'list-group-item',
+          'data-id': example.id
+        })
+        .append($a);
+
+      const $button = $('<button>')
+        .addClass('btn btn-danger float-right delete')
+        .text('ｘ');
+
+      $li.append($button);
+
+      return $li;
     });
 
-    const handle2 = $('#custom-handle2');
-    $('#slider2').slider({
-      min: 1,
-      max: 10,
-      value: 5,
-      create: function () {
-        handle2.text($(this).slider('value'));
-      },
-      slide: function (event, ui) {
-        handle2.text(ui.value);
-      }
-    });
-
-    const handle3 = $('#custom-handle3');
-    $('#slider3').slider({
-      min: 1,
-      max: 10,
-      value: 5,
-      create: function () {
-        handle3.text($(this).slider('value'));
-      },
-      slide: function (event, ui) {
-        handle3.text(ui.value);
-      }
-    });
-
-    $('#submit-btn').on('click', function (event, db) {
-      event.preventDefault();
-    
-      const newMood = {
-        alert: parseInt($(handle1).text()),
-        happy: parseInt($(handle2).text()),
-        relaxed: parseInt($(handle3).text())
-      };
-    
-      $.ajax({
-        type: 'POST',
-        url: '/api/examples',
-        data: newMood
-      }).then(() => {
-        console.log('New Mood is added');
-        window.location.href = '/mood-results';
-      });
-    });
+    $exampleList.empty();
+    $exampleList.append($examples);
   });
-});
+};
+
+// handleFormSubmit is called whenever we submit a new example
+// Save the new example to the db and refresh the list
+const handleFormSubmit = function (event) {
+  event.preventDefault();
+  console.log('worked');
+  const example = {
+    text: $exampleText.val().trim(),
+    description: $exampleDescription.val().trim()
+  };
+
+  if (!(example.text && example.description)) {
+    alert('You must enter an example text and description!');
+    return;
+  }
+
+  API.saveExample(example).then(function () {
+    refreshExamples();
+  });
+
+  $exampleText.val('');
+  $exampleDescription.val('');
+};
+
+// handleDeleteBtnClick is called when an example's delete button is clicked
+// Remove the example from the db and refresh the list
+const handleDeleteBtnClick = function () {
+  const idToDelete = $(this).parent().attr('data-id');
+
+  API.deleteExample(idToDelete).then(function () {
+    refreshExamples();
+  });
+};
+
+// Add event listeners to the submit and delete buttons
+$submitBtn.on('click', handleFormSubmit);
+$exampleList.on('click', '.delete', handleDeleteBtnClick);
