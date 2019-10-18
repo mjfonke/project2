@@ -41,16 +41,6 @@ module.exports = function (db) {
         console.log('something else: ' + res.json(dbMood));
       });
     },
-    // createMood: function (req, res) {
-    //   db.Mood.sync().then(() => {
-    //     const newMoods = {
-    //       data: req.body
-    //     };
-    //     return db.Mood.create(newMoods).then((dbMood) => {
-    //       res.json(dbMood);
-    //     });
-    //   });
-    // },
     deleteMood: function (req, res) {
       db.Mood.destroy({ where: { id: req.params.id } }).then(function (dbMood) {
         res.json(dbMood);

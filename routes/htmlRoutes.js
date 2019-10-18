@@ -70,10 +70,10 @@ module.exports = (db) => {
   });
 
   // Load example index page
-  router.get('/example', function (req, res) {
+  router.get('/examples', function (req, res) {
     if (req.isAuthenticated()) {
       db.Example.findAll({}).then(function (dbExamples) {
-        res.render('example', {
+        res.render('examples', {
           msg: 'Welcome!',
           examples: dbExamples
         });
@@ -112,17 +112,17 @@ module.exports = (db) => {
   });
 
   // Mood Results
-  router.get('/mood-results', function (req, res) {
-    if (req.isAuthenticated()) {
-      const user = {
-        user: req.session.passport.user,
-        isloggedin: req.isAuthenticated()
-      };
-      res.render('mood-results', user);
-    } else {
-      res.render('mood-results');
-    }
-  });
+  // router.get('/mood-results', function (req, res) {
+  //   if (req.isAuthenticated()) {
+  //     const user = {
+  //       user: req.session.passport.user,
+  //       isloggedin: req.isAuthenticated()
+  //     };
+  //     res.render('mood-results', user);
+  //   } else {
+  //     res.render('mood-results');
+  //   }
+  // });
 
   // Logout
   router.get('/logout', (req, res, next) => {
