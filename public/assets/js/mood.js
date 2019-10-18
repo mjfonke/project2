@@ -1,10 +1,5 @@
 const $submitBtn = $('#submit-btn');
-<<<<<<< HEAD
-const $saveBtn = $('#save-btn');
-const $chartBtn = $('#chart-link');
-=======
 const $chartBtn = $('#chart-btn');
->>>>>>> 344b60a7732fe68d27143f417bff1d4b34d08f8d
 
 const handle1 = $('#custom-handle1');
 $('#slider1').slider({
