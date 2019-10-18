@@ -16,6 +16,26 @@ module.exports = function (sequelize, DataTypes) {
     relaxed: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    eaten: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    slept: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    showered: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    worked: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
+    exercised: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     }
   }, {
     timestamps: true

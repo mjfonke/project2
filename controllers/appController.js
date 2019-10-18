@@ -32,6 +32,11 @@ module.exports = function (db) {
         alert: req.body.alert,
         happy: req.body.happy,
         relaxed: req.body.relaxed,
+        eaten: req.body.eaten,
+        slept: req.body.slept,
+        showered: req.body.showered,
+        worked: req.body.worked,
+        exercised: req.body.exercised,
         UserId: req.user.id
       };
 
