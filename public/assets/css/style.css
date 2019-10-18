@@ -211,3 +211,33 @@ background-color: #ffffff80;
   float: right;
   margin-right: 25%;
 }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 23px;
+  font-style: oblique;
+  color: rgb(131, 81, 131);
+}
+
+#slider1:active, #slider2:active, #slider3:active {
+  background-color: rgb(131, 81, 131);
+}
+
+.ui-slider-handle {
+
+}
+
+.ui-slider-handle:hover {
+  color: white;
+  background-color: rgb(131, 81, 131);
+}
+
+.ui-slider-handle:active {
+  color: white;
+  background-color: rgb(68, 13, 68);
+}
+
