@@ -10,6 +10,7 @@ module.exports = function (db) {
     createExample: function (req, res) {
       db.Example.create(req.body).then(function (dbExample) {
         res.json(dbExample);
+        console.log('example worked');
       });
     },
     // Delete an example by id
@@ -24,15 +25,32 @@ module.exports = function (db) {
       });
     },
     createMood: function (req, res) {
-      db.Mood.sync().then(() => {
-        const newMoods = {
-          data: req.body
-        };
-        return db.Mood.create(newMoods).then((dbMood) => {
-          res.json(dbMood);
-        });
+      console.log('something: ' + JSON.stringify(req.body));
+      // console.log('user:', req.user);
+
+      const newRecord = {
+        alert: req.body.alert,
+        happy: req.body.happy,
+        relaxed: req.body.relaxed,
+        UserId: req.user.id
+      };
+
+      db.Mood.create(newRecord).then(function (dbMood) {
+        console.log('OK');
+        res.json(dbMood);
+        console.log('something else: ' + res.json(dbMood));
       });
     },
+    // createMood: function (req, res) {
+    //   db.Mood.sync().then(() => {
+    //     const newMoods = {
+    //       data: req.body
+    //     };
+    //     return db.Mood.create(newMoods).then((dbMood) => {
+    //       res.json(dbMood);
+    //     });
+    //   });
+    // },
     deleteMood: function (req, res) {
       db.Mood.destroy({ where: { id: req.params.id } }).then(function (dbMood) {
         res.json(dbMood);
