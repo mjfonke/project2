@@ -1,17 +1,17 @@
-function addData (chart, label, data) {
-  chart.data.labels.push(label);
-  chart.data.datasets.forEach((dataset) => {
-    dataset.data.push(data);
-  });
-  chart.update();
-}
-function removeData (chart) {
-  chart.data.labels.pop();
-  chart.data.datasets.forEach((dataset) => {
-    dataset.data.pop();
-  });
-  chart.update();
-}
+// function addData (chart, label, data) {
+//   chart.data.labels.push(label);
+//   chart.data.datasets.forEach((dataset) => {
+//     dataset.data.push(data);
+//   });
+//   chart.update();
+// }
+// function removeData (chart) {
+//   chart.data.labels.pop();
+//   chart.data.datasets.forEach((dataset) => {
+//     dataset.data.pop();
+//   });
+//   chart.update();
+// }
 // const inputData = pullData();
 
 const inputData = [{
@@ -33,9 +33,11 @@ const inputData = [{
 // }
 
 function drawChart (chartInput) {
-  console.log('yea boi');
+  console.log('Chart Rendered');
   const ctx = document.getElementById('myChart').getContext('2d');
+  /* eslint-disable */
   const myChart = new Chart(ctx, {
+  /* eslint-enable */
     type: 'bar',
     data: {
       labels: chartInput[0],
@@ -120,7 +122,7 @@ function prepData (inputdata) {
   const happyLevel = [];
   const relaxedLevel = [];
   const averages = [];
-  for (i = 0; i < inputData.length; i++) {
+  for (let i = 0; i < inputData.length; i++) {
     axisLabel.push(inputData[i].date);
     alertLevel.push(inputData[i].alert);
     happyLevel.push(inputData[i].happy);
