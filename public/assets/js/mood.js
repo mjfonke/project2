@@ -1,5 +1,5 @@
-// $(document).ready(function (db) {
 const $submitBtn = $('#submit-btn');
+const $chartBtn = $('#chart-link');
 
 const handle1 = $('#custom-handle1');
 $('#slider1').slider({
@@ -55,13 +55,23 @@ const API = {
 
 const submitMood = function (event) {
   event.preventDefault();
+  $submitBtn.modal('show');
+  const q1 = $('input[name=question1]:checked').val();
+  const q2 = $('input[name=question2]:checked').val();
+  const q3 = $('input[name=question3]:checked').val();
+  const q4 = $('input[name=question4]:checked').val();
+  const q5 = $('input[name=question5]:checked').val();
   const newMood = {
     alert: parseInt($(handle1).text()),
     happy: parseInt($(handle2).text()),
-    relaxed: parseInt($(handle3).text())
+    relaxed: parseInt($(handle3).text()),
+    questions: [
+      q1, q2, q3, q4, q5
+    ]
   };
-  console.log('test3 ' + newMood);
-  API.saveMood(newMood).then(console.log('worked'));
+  API.saveMood(newMood);
 };
 
-$submitBtn.on('click', submitMood);
+$submitBtn.on('click');
+
+$chartBtn.on('click', submitMood);

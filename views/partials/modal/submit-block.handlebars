@@ -7,11 +7,62 @@
         </button>
       </div>
       <div class="modal-body">
-          <h4>You can find your weekly mood chart here.</h4>
-        <a href="/charts" id="chart-link"> <button id="chart-btn" type="btn" class="btn">Your Mood Charts</button></a>
+    
+         <div class="btn-group btn-group-toggle" data-toggle="buttons" id="q1">
+          <p class="mr-3">Have you eaten today?</p>
+        <label class="btn btn-primary">
+          <input type="radio" name="question1" value="1">Yes
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="question1" value="0">No
+        </label>
+        </div>
+
+       <div class="btn-group btn-group-toggle" data-toggle="buttons" id="q2">
+          <p class="mr-3">Did you sleep well last night?</p>
+        <label class="btn btn-primary">
+          <input type="radio" name="question2" value="1">Yes
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="question2" value="0">No
+        </label>
+        </div>
+       
+       <div class="btn-group btn-group-toggle" data-toggle="buttons" id="q3">
+          <p class="mr-3">Did you take a shower today?</p>
+        <label class="btn btn-primary">
+          <input type="radio" name="question3" value="1">Yes
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="question3" value="0">No
+        </label>
+        </div>
+     
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="q4" >
+
+          <p class="mr-3">Did you go to work today?</p>
+        <label class="btn btn-primary">
+          <input type="radio" name="question4" value="1">Yes
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="question4"value="0">No
+        </label>
+        </div>
+        
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" id="q5" >
+          <p class="mr-3">Did you exercise today?</p>
+        <label class="btn btn-primary">
+          <input type="radio" name="question5" value="1">Yes
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" name="question5" value="0">No
+        </label>
+        </div>
+        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="/charts" id="chart-link"> <button id="chart-btn" type="btn" class="btn">Mood Charts</button></a>
+        <button id="ex-btn" type="btn" class="btn">example</button>
       </div>
     </div>
   </div>
