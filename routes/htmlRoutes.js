@@ -65,7 +65,8 @@ module.exports = (db) => {
       };
       res.render('dashboard', user);
     } else {
-      res.render('dashboard');
+      res.redirect('/');
+      console.log('redirected');
     }
   });
 
@@ -93,7 +94,7 @@ module.exports = (db) => {
       res.render('mood', user);
       console.log('user loaded');
     } else {
-      res.redirect('/mood');
+      res.redirect('/');
       console.log('redirected');
     }
   });

@@ -14,23 +14,67 @@
 // }
 // const inputData = pullData();
 
-const inputData = [{
-  user: 1,
-  date: '10-1-1',
-  alert: 4,
-  happy: 7,
-  relaxed: 8
-}, {
-  user: 1,
-  date: '10-2-1',
-  alert: 6,
-  happy: 4,
-  relaxed: 5
-}
-];
-// function pullData(){
-
+// const inputData = [{
+//   user: 1,
+//   date: '10-1-1',
+//   alert: 4,
+//   happy: 7,
+//   relaxed: 8
+// }, {
+//   user: 1,
+//   date: '10-2-1',
+//   alert: 6,
+//   happy: 4,
+//   relaxed: 5
 // }
+// ];
+
+const API = {
+  getMoods: function (mood) {
+    return $.ajax({
+      type: 'GET',
+      url: 'api/mood'
+    });
+  }
+};
+
+const moodData = async function () {
+  const output = await updateMoodData();
+  console.log('async complete');
+  return output;
+};
+async function updateMoodData () {
+  API.getMoods().then(function (data) {
+    const output = data;
+    console.log(output);
+    return (output);
+  });
+};
+
+async function prepData () {
+  try {
+    const inputData = await moodData();
+    const axisLabel = [];
+    const alertLevel = [];
+    const happyLevel = [];
+    const relaxedLevel = [];
+    const averages = [];
+    for (let i = 0; i < inputData.length; i++) {
+      axisLabel.push(inputData[i].date);
+      alertLevel.push(inputData[i].alert);
+      happyLevel.push(inputData[i].happy);
+      relaxedLevel.push(inputData[i].relaxed);
+      const average = (inputData[i].alert + inputData[i].happy + inputData[i].relaxed) / 3;
+      averages.push(average);
+    }
+    const output = [axisLabel, alertLevel, happyLevel, relaxedLevel, averages];
+    return (output);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+// const chartInput = prepData(inputData);
 
 function drawChart (chartInput) {
   console.log('Chart Rendered');
@@ -116,22 +160,19 @@ function drawChart (chartInput) {
     }
   });
 }
-function prepData (inputdata) {
-  const axisLabel = [];
-  const alertLevel = [];
-  const happyLevel = [];
-  const relaxedLevel = [];
-  const averages = [];
-  for (let i = 0; i < inputData.length; i++) {
-    axisLabel.push(inputData[i].date);
-    alertLevel.push(inputData[i].alert);
-    happyLevel.push(inputData[i].happy);
-    relaxedLevel.push(inputData[i].relaxed);
-    const average = (inputData[i].alert + inputData[i].happy + inputData[i].relaxed) / 3;
-    averages.push(average);
-  }
-  const output = [axisLabel, alertLevel, happyLevel, relaxedLevel, averages];
-  return (output);
-}
-const chartInput = prepData(inputData);
-drawChart(chartInput);
+
+updateMoodData().then(drawChart(prepData(inputData)));
+
+// some_3secs_function(some_value, function() {
+//   some_5secs_function(other_value, function() {
+//     drawChart(chartInput)
+//     });
+//   });
+// });
+
+// function renderPage () {
+//   updateMoodData().then(prepData(inputData)).then(drawChart(chartInput));
+
+// }
+
+// renderPage();
