@@ -54,13 +54,7 @@ const API = {
 };
 
 const submitMood = function (event) {
-  console.log("clicked")
   event.preventDefault();
-  // const q1 = $('input[name=question1]:checked').val();
-  // const q2 = $('input[name=question2]:checked').val();
-  // const q3 = $('input[name=question3]:checked').val();
-  // const q4 = $('input[name=question4]:checked').val();
-  // const q5 = $('input[name=question5]:checked').val();
   const newMood = {
     alert: parseInt($(handle1).text()),
     happy: parseInt($(handle2).text()),
@@ -73,7 +67,7 @@ const submitMood = function (event) {
   };
   console.log(newMood);
   API.saveMood(newMood);
-  // window.location.href = '/charts';
+  window.location.href = '/charts';
 };
 
 $submitBtn.on('click');
