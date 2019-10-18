@@ -51,39 +51,14 @@
        <div class="mb-3" id="slider3">
         <div id="custom-handle3" class="ui-slider-handle bar"></div>
         </div>
-        <button type="submit" class="btn btn-dark btn-block mt-5" id="submit-btn">Submit</button>
+        <button type="submit" class="btn btn-dark btn-block mt-5" id="submit-btn" data-toggle="modal" data-target="#submit-modal">Submit</button>
     </div>
   </div>
   
 </div>
 
-{{!-- <div class="container box">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="container color">
-        <h1>{{msg}}</h1>
-        <h3>How are you doing today?</h3>
-        <p>Drag the slider to express your mood.</p>
-        <div class = "label">
-        <p class="label-left">Happy</p>
-        <p class="label-right">Sad </p>
-        </div>
-        <div class="mb-4 mt-4" id="slider1">
-        <div id="custom-handle1" class="ui-slider-handle bar"></div>
-        </div>
-        <div class="mb-4" id="slider2">
-        <div id="custom-handle2" class="ui-slider-handle bar"></div>
-        </div>
-        <div class="mb-4" id="slider3">
-        <div id="custom-handle3" class="ui-slider-handle bar"></div>
-        </div>
-        <button type="submit" class="btn btn-dark mr-5" id="submit-btn">Submit</button>
-        </div>
-      </div>
-    </div>
-  </div> --}}
-
+{{> modal/login-block}}
+{{> modal/submit-block}}
 
 <script src="/assets/js/mood.js"></script>
 
-{{!-- {{> modal/login-block}} --}}
