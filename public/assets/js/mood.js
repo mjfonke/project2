@@ -1,6 +1,4 @@
-// $(document).ready(function (db) {
 const $submitBtn = $('#submit-btn');
-
 const handle1 = $('#custom-handle1');
 $('#slider1').slider({
   min: 1,
@@ -52,7 +50,6 @@ const API = {
     });
   }
 };
-
 const submitMood = function (event) {
   event.preventDefault();
   const newMood = {
@@ -60,8 +57,7 @@ const submitMood = function (event) {
     happy: parseInt($(handle2).text()),
     relaxed: parseInt($(handle3).text())
   };
-  console.log('test3 ' + newMood);
-  API.saveMood(newMood).then(console.log('worked'));
+  API.saveMood(newMood);
+  $submitBtn.modal('show');
 };
-
 $submitBtn.on('click', submitMood);
