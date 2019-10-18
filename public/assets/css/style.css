@@ -10,8 +10,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-/* dashboard.handlebars */
 
+/* dashboard.handlebars */
 .main-logo {
   color: #ffffff80;
   left: 0;
@@ -73,13 +73,11 @@ hr {
 }
 
 /* modal-login-block.handlebars */
-
 .modal {
   color: black;
 }
 
 /* nav-block.handlebars */
-
 a {
   color: black;
 }
@@ -132,31 +130,36 @@ a {
 
 .label-left {
   float: left;
+  font-size: 23px;
+  font-style: oblique;
+  color: rgb(131, 81, 131);
 }
 
 .label-right {
   float: right;
+  font-size: 23px;
+  font-style: oblique;
+  color: rgb(131, 81, 131);
 }
 
 #submit-btn {
   justify-content: center;
 }
-/* register.handlebars */
 
+/* register.handlebars */
 #go-home {
   width: auto;
   height: 65px;
- }
+}
 
- .register-wrapper {
-  padding: 20px;
-  margin-top: 130px;
-  text-align: center;
-  background-color: #ffffff80;
- }
+.register-wrapper {
+padding: 20px;
+margin-top: 130px;
+text-align: center;
+background-color: #ffffff80;
+}
 
 /* profile.handlebars */
-
 #user-form, .header-wrap, #create-form, .create-user-wrap {
   padding: 20px;
   border-radius: 15px;
@@ -175,11 +178,9 @@ a {
 }
 
 /* example-detail.handlebars */
-
 .card-body {
   color: #444;
 }
-
 
 [data-register="true"] {
   color: white !important;
@@ -194,11 +195,9 @@ a {
   text-transform: capitalize;
 }
 
-
 .list-group-item {
   line-height: 2.5;
 }
-
 
 /* charts.handlebars */
 .chart-container {
@@ -208,3 +207,7 @@ a {
   background-color: #ffffff80;
 }
 
+#q1, #q2, #q3, #q4, #q5 {
+  float: right;
+  margin-right: 20%;
+}

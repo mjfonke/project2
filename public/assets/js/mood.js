@@ -3,7 +3,7 @@ const $chartBtn = $('#chart-btn');
 
 const handle1 = $('#custom-handle1');
 $('#slider1').slider({
-  min: 1,
+  min: 0,
   max: 10,
   value: 5,
   create: function () {
@@ -16,7 +16,7 @@ $('#slider1').slider({
 
 const handle2 = $('#custom-handle2');
 $('#slider2').slider({
-  min: 1,
+  min: 0,
   max: 10,
   value: 5,
   create: function () {
@@ -29,7 +29,7 @@ $('#slider2').slider({
 
 const handle3 = $('#custom-handle3');
 $('#slider3').slider({
-  min: 1,
+  min: 0,
   max: 10,
   value: 5,
   create: function () {
