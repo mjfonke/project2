@@ -3,6 +3,9 @@
 # Project 2: Moodiful
 
 Built with Express, Handlebars, Sequelize, Passport and Local Auth.
+User will be able to submit selected mood options daily and obtain results. 
+
+App design idea is to curate information to build a profile for user. 
 
 ## Live link:
 https://project2-team4.herokuapp.com/
