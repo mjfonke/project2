@@ -1,4 +1,5 @@
 const $submitBtn = $('#submit-btn');
+const $saveBtn = $('#save-btn');
 const $chartBtn = $('#chart-link');
 
 const handle1 = $('#custom-handle1');
