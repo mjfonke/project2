@@ -60,8 +60,7 @@ const submitMood = function (event) {
     happy: parseInt($(handle2).text()),
     relaxed: parseInt($(handle3).text())
   };
-  console.log('test3 ' + newMood);
-  API.saveMood(newMood).then(console.log('worked'));
+  API.saveMood(newMood);
 };
 
 $submitBtn.on('click', submitMood);
