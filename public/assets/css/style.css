@@ -56,13 +56,20 @@ body {
 }
 
 #update-err-msg,
-#login-err-msg,
 #create-err-msg {
   color: white !important;
 }
 
 hr {
   background-color: rgb(131, 81, 131);
+}
+
+#login-err-msg {
+  left: 34%;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 80%;
 }
 
 /* modal-login-block.handlebars */
@@ -109,7 +116,7 @@ a {
   margin-top: -.8em;
   text-align: center;
   line-height: 1.6em;
-  color: rgb(44, 4, 44)
+ 
 }
 
 .box {
