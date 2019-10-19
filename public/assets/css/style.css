@@ -13,7 +13,7 @@ body {
 
 /* dashboard.handlebars */
 .main-logo {
-  color: #ffffff80;
+  color: #ffffff9d;
   left: 0;
   line-height: 200px;
   margin-top: -100px;
@@ -121,7 +121,7 @@ a {
   padding: 30px;
   margin-top: 200px;
   text-align: center;
-  background-color: #ffffff80;
+  background-color: #ffffff9d;
 }
 
 .mood-btn {
@@ -156,7 +156,7 @@ a {
 padding: 20px;
 margin-top: 130px;
 text-align: center;
-background-color: #ffffff80;
+background-color: #ffffff9d;
 }
 
 /* profile.handlebars */
@@ -174,7 +174,7 @@ background-color: #ffffff80;
   padding: 20px;
   margin-top: 125px;
   text-align: center;
-  background-color: #ffffff80;
+  background-color: #ffffff9d;
 }
 
 /* example-detail.handlebars */
@@ -204,12 +204,16 @@ background-color: #ffffff80;
   padding: 20px;
   margin-top: 80px;
   text-align: center;
-  background-color: #ffffff80;
+  background-color: #ecc1fdd7;
 }
 
 #q1, #q2, #q3, #q4, #q5 {
   float: right;
   margin-right: 25%;
+}
+
+.moodbarbox {
+  width: 60%;
 }
 
 .flex {
@@ -218,9 +222,14 @@ background-color: #ffffff80;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-end;
-  font-size: 23px;
+  font-size: 18px;
   font-style: oblique;
   color: rgb(131, 81, 131);
+}
+
+#slider1, #slider2, #slider3 {
+  border: 1px solid white;
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pf-eye-037_1.jpg?auto=format&bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&mark=rawpixel-watermark.png&markalpha=90&markpad=13&markscale=10&markx=25&q=75&usm=15&vib=3&w=1000&s=78b40ffdfd3922c257257b5c775ffeb6");
 }
 
 #slider1:active, #slider2:active, #slider3:active {
@@ -228,16 +237,20 @@ background-color: #ffffff80;
 }
 
 .ui-slider-handle {
-
+  border: 1px solid white;
 }
 
 .ui-slider-handle:hover {
-  color: white;
-  background-color: rgb(131, 81, 131);
+  border: 1px solid white;
+  transition: all .2s ease-in-out;
+  transform: scale(1.2); 
+  background-color: white;
 }
 
 .ui-slider-handle:active {
+  border: 1px solid white;
+  transition: all .2s ease-in-out;
+  transform: scale(1.2); 
   color: white;
-  background-color: rgb(68, 13, 68);
+  background-color: rgb(46, 5, 46);
 }
-
