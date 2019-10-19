@@ -14,6 +14,7 @@ module.exports = (db) => {
     isAdmin: false
   });
   db.Mood.create({
+    id: 0,
     alert: 4,
     happy: 7,
     relaxed: 3,

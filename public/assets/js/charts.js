@@ -125,7 +125,7 @@ function prepData (inputData) {
   const relaxedLevel = [];
   const averages = [];
   for (let i = 0; i < inputData.length; i++) {
-    axisLabel.push(/* eslint-disable */moment/* eslint-enable */(inputData[i].createdAt).format('MM/DD/YYYY'));
+    axisLabel.push(/* eslint-disable */moment/* eslint-enable */(inputData[i].createdAt).format('MM/DD/YY hh:mm a'));
     alertLevel.push(inputData[i].alert);
     happyLevel.push(inputData[i].happy);
     relaxedLevel.push(inputData[i].relaxed);
