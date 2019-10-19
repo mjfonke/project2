@@ -14,7 +14,6 @@ module.exports = (db) => {
     isAdmin: false
   });
   db.Mood.create({
-    id: 0,
     alert: 4,
     happy: 7,
     relaxed: 3,
@@ -23,8 +22,6 @@ module.exports = (db) => {
     showered: 1,
     worked: 1,
     exercised: 0,
-    createdAt: '2019-10-18 16:48:21',
-    updatedAt: '2019-10-18 16:48:21',
     UserId: 10
   });
   db.Mood.create({
@@ -36,8 +33,6 @@ module.exports = (db) => {
     showered: 0,
     worked: 1,
     exercised: 0,
-    createdAt: '2019-10-14 18:00:00',
-    updatedAt: '2019-10-14 18:00:00',
     UserId: 11
   });
   db.Mood.create({
@@ -49,8 +44,6 @@ module.exports = (db) => {
     showered: 0,
     worked: 1,
     exercised: 1,
-    createdAt: '2019-10-13 13:00:00',
-    updatedAt: '2019-10-13 13:00:00',
     UserId: 12
   });
   db.Mood.create({
@@ -62,8 +55,6 @@ module.exports = (db) => {
     showered: 0,
     worked: 1,
     exercised: 1,
-    createdAt: '2019-10-13 13:00:00',
-    updatedAt: '2019-10-13 13:00:00',
     UserId: 12
   });
 };

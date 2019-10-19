@@ -215,7 +215,7 @@ background-color: #ffffff9d;
 }
 
 .moodbarbox {
-  width: 60%;
+  width: 55%;
 }
 
 .flex {
@@ -227,6 +227,8 @@ background-color: #ffffff9d;
   font-size: 18px;
   font-style: oblique;
   color: rgb(131, 81, 131);
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 
 #slider1, #slider2, #slider3 {

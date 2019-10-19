@@ -79,7 +79,7 @@ $('.dropdown-item').on('click', function () {
       const prev10 = [];
       for (let i = position; i < position + 10; i++) {
         prev10.push(myMoods[i]);
-      };
+      }
       prepData(prev10);
       break;
     case 'next10':
@@ -87,7 +87,7 @@ $('.dropdown-item').on('click', function () {
       const next10 = [];
       for (let i = position; i < position + 10; i++) {
         next10.push(myMoods[i]);
-      };
+      }
       prepData(next10);
       break;
     case 'breakfast':
