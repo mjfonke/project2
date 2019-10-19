@@ -71,7 +71,8 @@ const APIreq = {
 let position = 0;
 let myMoods = [];
 
-$('.btn-group').on('click', function () {
+$('.dropdown-item').on('click', function () {
+  console.log('clicked');
   switch (this.id) {
     case 'prev10':
       position = Math.max(position - 10, 0);
@@ -103,6 +104,10 @@ $('.btn-group').on('click', function () {
       break;
     case 'exercised':
       APIreq.getExercised();
+      break;
+    default:
+      console.log('nothing happened');
+      break;
   }
 });
 
