@@ -39,50 +39,39 @@ const API = {
 };
 
 const moodData = async function () {
-  const output = await updateMoodData();
+  const output = await API.getMoods();
   console.log('async complete');
-  return output;
-};
-async function updateMoodData () {
-  API.getMoods().then(function (data) {
-    const output = data;
-    console.log(output);
-    return (output);
-  });
+  prepData(output);
 };
 
-async function prepData () {
-  try {
-    const inputData = await moodData();
-    const axisLabel = [];
-    const alertLevel = [];
-    const happyLevel = [];
-    const relaxedLevel = [];
-    const averages = [];
-    for (let i = 0; i < inputData.length; i++) {
-      axisLabel.push(inputData[i].date);
-      alertLevel.push(inputData[i].alert);
-      happyLevel.push(inputData[i].happy);
-      relaxedLevel.push(inputData[i].relaxed);
-      const average = (inputData[i].alert + inputData[i].happy + inputData[i].relaxed) / 3;
-      averages.push(average);
-    }
-    const output = [axisLabel, alertLevel, happyLevel, relaxedLevel, averages];
-    return (output);
-  } catch (err) {
-    console.log(err);
+function prepData (inputData) {
+  const axisLabel = [];
+  const alertLevel = [];
+  const happyLevel = [];
+  const relaxedLevel = [];
+  const averages = [];
+  for (let i = 0; i < inputData.length; i++) {
+    axisLabel.push(moment(inputData[i].createdAt).format('MM/DD/YYYY'));
+    alertLevel.push(inputData[i].alert);
+    happyLevel.push(inputData[i].happy);
+    relaxedLevel.push(inputData[i].relaxed);
+    const average = (inputData[i].alert + inputData[i].happy + inputData[i].relaxed) / 3;
+    averages.push(average);
   }
+  const output = [axisLabel, alertLevel, happyLevel, relaxedLevel, averages];
+  drawChart(output);
 };
-
-// const chartInput = prepData(inputData);
 
 function drawChart (chartInput) {
-  console.log('Chart Rendered');
   const ctx = document.getElementById('myChart').getContext('2d');
   /* eslint-disable */
   const myChart = new Chart(ctx, {
   /* eslint-enable */
     type: 'bar',
+    backgroundColor: 'transparent',
+    title: {
+      text: 'Test Title'
+    },
     data: {
       labels: chartInput[0],
       datasets: [{
@@ -159,20 +148,7 @@ function drawChart (chartInput) {
       }
     }
   });
+  console.log('Chart Rendered');
 }
 
-updateMoodData().then(drawChart(prepData(inputData)));
-
-// some_3secs_function(some_value, function() {
-//   some_5secs_function(other_value, function() {
-//     drawChart(chartInput)
-//     });
-//   });
-// });
-
-// function renderPage () {
-//   updateMoodData().then(prepData(inputData)).then(drawChart(chartInput));
-
-// }
-
-// renderPage();
+moodData();

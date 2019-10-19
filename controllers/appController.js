@@ -20,7 +20,12 @@ module.exports = function (db) {
       });
     },
     getMoods: function (req, res) {
-      db.Mood.findAll({}).then(function (dbMoods) {
+      console.log('Current User: ' + req.user.id);
+      db.Mood.findAll({
+        where: {
+          UserId: req.user.id
+        }
+      }).then(function (dbMoods) {
         res.json(dbMoods);
       });
     },
