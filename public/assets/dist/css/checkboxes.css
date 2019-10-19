@@ -348,18 +348,18 @@ div[class^="ckbx-style-"] input[type=checkbox] {
   top: .1em;
   transition: all 0.2s ease;
   box-shadow: 0 0 0 5px #fcfff4 inset;
-  background: #4d4d4d;
+  background: rgb(131, 81, 131);
   z-index: 2;
   animation: switch-off .3s ease-out;
 }
 
 .ckbx-style-7 input[type=checkbox]:checked + label:before {
-  background: rgb(68, 13, 68);
+  background: rgb(131, 81, 131);
 }
 
 .ckbx-style-7 input[type=checkbox]:checked + label:after {
   left: 1.2em;
-  background: rgb(131, 81, 131);
+  background: rgb(68, 13, 68);
   animation: switch-on .3s ease-out;
 }
 
