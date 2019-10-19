@@ -59,15 +59,15 @@ const submitMood = function (event) {
     alert: parseInt($(handle1).text()),
     happy: parseInt($(handle2).text()),
     relaxed: parseInt($(handle3).text()),
-    eaten: parseInt($('input[name=question1]:checked').val()),
-    slept: parseInt($('input[name=question2]:checked').val()),
-    showered: parseInt($('input[name=question3]:checked').val()),
-    worked: parseInt($('input[name=question4]:checked').val()),
-    exercised: parseInt($('input[name=question5]:checked').val())
+    eaten: parseInt($('input[name=question1]').val()),
+    slept: parseInt($('input[name=question2]').val()),
+    showered: parseInt($('input[name=question3]').val()),
+    worked: parseInt($('input[name=question4]').val()),
+    exercised: parseInt($('input[name=question5]').val())
   };
   console.log(newMood);
   API.saveMood(newMood);
-  window.location.href = '/charts';
+  // window.location.href = '/charts';
 };
 
 $submitBtn.on('click');
