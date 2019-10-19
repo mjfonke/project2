@@ -30,6 +30,7 @@ module.exports = function (db) {
       });
     },
     getBreakfast: function (req, res) {
+      console.log('appController breakfast hit');
       db.Mood.findAll({
         where: {
           UserId: req.user.id,
