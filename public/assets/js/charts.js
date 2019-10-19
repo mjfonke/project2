@@ -29,7 +29,7 @@
 // }
 // ];
 
-let API = {
+const API = {
   getMoods: function (mood) {
     return $.ajax({
       type: 'GET',
