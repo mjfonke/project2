@@ -52,7 +52,7 @@ module.exports = (db) => {
       };
       res.render('charts', user);
     } else {
-      res.render('charts');
+      res.redirect('/');
     }
   });
 

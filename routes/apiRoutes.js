@@ -22,6 +22,10 @@ module.exports = (passport, db) => {
   router.get('/mood', AppController.getMoods);
   router.post('/mood', AppController.createMood);
   router.delete('/mood/:id', AppController.deleteMood);
-
+  router.get('/mood/breakfast', AppController.getBreakfast);
+  router.get('/mood/slept', AppController.getSlept);
+  router.get('/mood/showered', AppController.getShowered);
+  router.get('/mood/worked', AppController.getWorked);
+  router.get('/mood/exercised', AppController.getExercised);
   return router;
 };

@@ -29,19 +29,93 @@
 // }
 // ];
 
-let API = {
+const APIreq = {
   getMoods: function (mood) {
     return $.ajax({
       type: 'GET',
       url: 'api/mood'
     });
+  },
+  getBreakfast: function (mood) {
+    return $.ajax({
+      type: 'GET',
+      url: 'api/mood/breakfast'
+    });
+  },
+  getSlept: function (mood) {
+    return $.ajax({
+      type: 'GET',
+      url: 'api/mood/slept'
+    });
+  },
+  getShowered: function (mood) {
+    return $.ajax({
+      type: 'GET',
+      url: 'api/mood/showered'
+    });
+  },
+  getWorked: function (mood) {
+    return $.ajax({
+      type: 'GET',
+      url: 'api/mood/worked'
+    });
+  },
+  getExercised: function (mood) {
+    return $.ajax({
+      type: 'GET',
+      url: 'api/mood/exercised'
+    });
   }
 };
 
-const moodData = async function () {
-  const output = await API.getMoods();
+let position = 0;
+let myMoods = [];
+
+$('.btn-group').on('click', function () {
+  switch (this.id) {
+    case 'prev10':
+      position = Math.max(position - 10, 0);
+      const prev10 = [];
+      for (let i = position; i < position + 10; i++) {
+        prev10.push(myMoods[i]);
+      };
+      prepData(prev10);
+      break;
+    case 'next10':
+      position = Math.min(position + 10, myMoods.length - 10, 0);
+      const next10 = [];
+      for (let i = position; i < position + 10; i++) {
+        next10.push(myMoods[i]);
+      };
+      prepData(next10);
+      break;
+    case 'breakfast':
+      APIreq.getBreakfast();
+      break;
+    case 'slept':
+      APIreq.getSlept();
+      break;
+    case 'showered':
+      APIreq.getShowered();
+      break;
+    case 'worked':
+      APIreq.getWorked();
+      break;
+    case 'exercised':
+      APIreq.getExercised();
+  }
+});
+
+const moodData = async function (apiData) {
+  const output = await APIreq.getMoods();
   console.log('async complete');
-  prepData(output);
+  myMoods = output;
+  position = Math.max(output.length - 10, 0);
+  const last10 = [];
+  for (let i = position; i < output.length; i++) {
+    last10.push(output[i]);
+  }
+  prepData(last10);
 };
 
 function prepData (inputData) {
@@ -68,7 +142,7 @@ function drawChart (chartInput) {
   const myChart = new Chart(ctx, {
   /* eslint-enable */
     type: 'bar',
-    backgroundColor: 'transparent',
+    // backgroundColor: 'transparent',
     title: {
       text: 'Test Title'
     },
