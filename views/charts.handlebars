@@ -11,5 +11,22 @@
       <h5 class="text-danger" id="login-err-msg"></h5>
     </div> --}}
 
+<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+  <button type="button" class="btn btn-secondary" id='prev10'>Previous 10 days</button>
+  <button type="button" class="btn btn-secondary" id='next10'>Next 10 days</button>
+
+  <div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter By Self-Care
+    </button>
+    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <a class="dropdown-item" id='breakfast'>Days I Ate Breakfast</a>
+      <a class="dropdown-item" id='slept'>Days I Slept Well</a>
+      <a class="dropdown-item" id='showered'>Days I Showered</a>
+      <a class="dropdown-item" id='worked'>Days I Worked</a>
+      <a class="dropdown-item" id='exercised'>Days I Exercised</a>
+    </div>
+  </div>
+</div>
 
 <script src="/assets/js/charts.js"></script>
