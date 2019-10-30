@@ -29,6 +29,8 @@
 // }
 // ];
 
+let myChart = null;
+
 const APIreq = {
   getMoods: function (mood) {
     return $.ajax({
@@ -71,50 +73,78 @@ const APIreq = {
 let position = 0;
 let myMoods = [];
 
-$('.dropdown-item').on('click', function () {
-  console.log('clicked');
+function findMoods (key) {
+  const output = [];
+  for (let i = 0; i < myMoods.length; i++) {
+    if (myMoods[i][key] === true) {
+      output.push(myMoods[i]);
+    }
+  }
+  return output;
+};
+
+$('.btn').on('click', function () {
   switch (this.id) {
     case 'prev10':
       position = Math.max(position - 10, 0);
       const prev10 = [];
       for (let i = position; i < position + 10; i++) {
         prev10.push(myMoods[i]);
+<<<<<<< HEAD
       }
+=======
+      };
+      console.log('position: ' + position);
+      console.log('prev10: ' + JSON.stringify(prev10));
+>>>>>>> 5dc0c7d98d2aa66b507b6499539ca677b292abf7
       prepData(prev10);
       break;
     case 'next10':
-      position = Math.min(position + 10, myMoods.length - 10, 0);
+      position = Math.min(position + 10, Math.max(myMoods.length - 10, 0));
       const next10 = [];
       for (let i = position; i < position + 10; i++) {
         next10.push(myMoods[i]);
+<<<<<<< HEAD
       }
+=======
+      };
+      console.log('position: ' + position);
+      console.log('next10: ' + JSON.stringify(next10));
+>>>>>>> 5dc0c7d98d2aa66b507b6499539ca677b292abf7
       prepData(next10);
       break;
+    default:
+      break;
+  };
+});
+
+$('.dropdown-item').on('click', function () {
+  switch (this.id) {
     case 'breakfast':
-      APIreq.getBreakfast();
+      prepData(findMoods('eaten'));
       break;
     case 'slept':
-      APIreq.getSlept();
+      prepData(findMoods('slept'));
       break;
     case 'showered':
-      APIreq.getShowered();
+      prepData(findMoods('showered'));
       break;
     case 'worked':
-      APIreq.getWorked();
+      prepData(findMoods('worked'));
       break;
     case 'exercised':
-      APIreq.getExercised();
+      prepData(findMoods('exercised'));
       break;
     default:
-      console.log('nothing happened');
       break;
   }
 });
 
-const moodData = async function (apiData) {
+const moodData = async function () {
   const output = await APIreq.getMoods();
   console.log('async complete');
   myMoods = output;
+  console.log('myMoods initial :' + JSON.stringify(myMoods));
   position = Math.max(output.length - 10, 0);
   const last10 = [];
   for (let i = position; i < output.length; i++) {
@@ -142,12 +172,14 @@ function prepData (inputData) {
 };
 
 function drawChart (chartInput) {
+  if (myChart != null) {
+    myChart.destroy();
+  };
   const ctx = document.getElementById('myChart').getContext('2d');
   /* eslint-disable */
-  const myChart = new Chart(ctx, {
+  myChart = new Chart(ctx, {
   /* eslint-enable */
     type: 'bar',
-    // backgroundColor: 'transparent',
     title: {
       text: 'Test Title'
     },

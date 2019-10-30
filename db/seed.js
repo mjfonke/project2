@@ -22,7 +22,7 @@ module.exports = (db) => {
     showered: 1,
     worked: 1,
     exercised: 0,
-    UserId: 10
+    UserId: 2
   });
   db.Mood.create({
     alert: 3,
@@ -33,7 +33,7 @@ module.exports = (db) => {
     showered: 0,
     worked: 1,
     exercised: 0,
-    UserId: 11
+    UserId: 2
   });
   db.Mood.create({
     alert: 7,
@@ -44,7 +44,7 @@ module.exports = (db) => {
     showered: 0,
     worked: 1,
     exercised: 1,
-    UserId: 12
+    UserId: 2
   });
   db.Mood.create({
     alert: 7,
@@ -55,6 +55,6 @@ module.exports = (db) => {
     showered: 0,
     worked: 1,
     exercised: 1,
-    UserId: 12
+    UserId: 2
   });
 };

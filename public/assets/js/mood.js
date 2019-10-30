@@ -67,7 +67,7 @@ const submitMood = function (event) {
   };
   console.log(newMood);
   API.saveMood(newMood);
-  // window.location.href = '/charts';
+  window.location.href = '/charts';
 };
 
 $submitBtn.on('click');
